@@ -1,0 +1,26 @@
+<view class="cate">
+	<SearchInput></SearchInput>
+	<view class="cate_continer">
+		<scroll-view scroll-y="true" class="cate_left">
+			<view wx:for="{{cateTitle}}" wx:for-index="index" class="cate_title {{index===currentIndex?'active':''}}"  wx:key="name" bindtap="handleItem" data-index="{{index}}">
+				{{item}}
+			</view>
+		</scroll-view>
+		<scroll-view scroll-y scroll-top="{{scrollTop}}" class="cate_right">
+			<view class="detail_box" wx:for="{{cateDetail}}" wx:key="cat_name">
+				<view class="detail_title">
+					<text>/</text>
+					<text>{{item.cat_name}}</text>
+					<text>/</text>
+				</view>
+				<view class="detail_detail">
+					<navigator wx:for="{{item.children}}" wx:key="*this" url="/pages/goods_list/index?cid={{item.cat_id}}">
+						<image mode="widthFix" src="{{item.cat_icon}}"></image>
+						<view class="detail_catname">{{item.cat_name}}</view>
+					</navigator>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+</view>

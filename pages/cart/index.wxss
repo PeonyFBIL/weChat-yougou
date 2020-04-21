@@ -1,0 +1,106 @@
+.cart_info {
+  display: flex;
+  padding: 10rpx;
+}
+.cart_info .cart_useinfo {
+  flex: 4;
+}
+.cart_info .cart_tel {
+  flex: 2;
+  text-align: right;
+}
+.cart_list .cart_list_item {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding: 0 20rpx;
+}
+.cart_list .cart_list_item checkbox-group {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_list .cart_list_item .cart_img {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_list .cart_list_item .cart_img image {
+  width: 80%;
+}
+.cart_list .cart_list_item .cart_detail {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart_list .cart_list_item .cart_detail .name_wrap {
+  display: -webkit-box;
+  font-size: 24rpx;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.cart_list .cart_list_item .cart_detail .price_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_list .cart_list_item .cart_detail .price_wrap .price {
+  color: var(--themeColor);
+}
+.cart_list .cart_list_item .cart_detail .price_wrap .addOr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cart_list .cart_list_item .cart_detail .price_wrap .btn_sub,
+.cart_list .cart_list_item .cart_detail .price_wrap .btn_add {
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+}
+.cart_list .cart_list_item .cart_detail .price_wrap .good_num {
+  padding: 5rpx;
+}
+.footer_info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 90rpx;
+}
+.footer_info checkbox-group {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer_info .price_total {
+  flex: 5;
+  text-align: right;
+  padding-right: 5rpx;
+}
+.footer_info .price_total .price_num {
+  font-weight: 600;
+}
+.footer_info .price_total .price_num text {
+  color: var(--themeColor);
+}
+.footer_info .price_total .price_other {
+  font-size: 24rpx;
+}
+.footer_info .pay_info {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: var(--themeColor);
+}

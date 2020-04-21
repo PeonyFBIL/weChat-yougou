@@ -1,0 +1,50 @@
+<block wx:if="{cart.length!==0}}">
+	<view class="cart">
+		<button bindtap="handleAddAddress" wx:if="{{userName===''?true:false}}">添加地址</button>
+		<view wx:else class="cart_info">
+			<view class="cart_useinfo">
+				<view>收件人：{{userName}}</view>
+				<view>{{address}}</view>
+			</view>
+			<view class="cart_tel">{{telNumber}}</view>
+		</view>
+	</view>
+	<view class="cart_list">
+		<view class="cart_list_item" wx:for="{{cart}}" wx:key="goods_id">
+			<checkbox-group>
+				<checkbox checked="{{item.isCheck}}" bindtap="handleCheck" data-index="{{index}}"></checkbox>
+			</checkbox-group>
+
+			<view class="cart_img">
+				<image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000611474169_1_400x400.jpg'}}"></image>
+			</view>
+			<view class="cart_detail">
+				<view class="name_wrap">{{item.goods_name}}</view>
+				<view class="price_wrap">
+					<view class="price">￥{{item.goods_price}}</view>
+					<view class="addOr">
+						<view class="btn_sub" bindtap="handleChangeNum" data-index="{{index}}" data-symbol="{{-1}}">-</view>
+						<view class="good_num">{{item.num}}</view>
+						<view class="btn_add" bindtap="handleChangeNum" data-index="{{index}}" data-symbol="{{1}}">+</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</block>
+
+<view wx:else class="cart_img_cong">
+	<image mode="widthFix" src="https://hbimg.huabanimg.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658"></image>
+</view>
+<view class="footer_info">
+	<checkbox-group>
+		<checkbox checked="{{allCheck}}" bindtap="handleAllCheck">全选</checkbox>
+	</checkbox-group>
+	<view class="price_total">
+		<view class="price_num">
+			合计： <text >￥{{total_price}}</text>
+		</view>
+		<view class="price_other">包含运费</view>
+	</view>
+	<view class="pay_info" bindtap="handleChangeRouter">结算({{total_num}})</view>
+</view>

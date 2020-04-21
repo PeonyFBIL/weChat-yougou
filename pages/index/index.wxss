@@ -1,0 +1,55 @@
+SearchInput {
+  padding: 0;
+  margin: 0;
+}
+
+.swiper_index {
+  width: 750rpx;
+  padding: 0px;
+  margin: 0px;
+}
+
+.swiper_index image {
+  width: 100%;
+}
+
+.index_nav {
+  display: flex;
+  padding: 20px;
+}
+
+.index_nav navigator {
+  flex: 1;
+}
+
+.index_nav navigator image {
+  width: 100%;
+}
+
+.floor_box .floor_title {
+  padding: 10rpx 0;
+}
+
+.floor_box .floor_classify {
+  overflow: hidden;
+}
+
+.floor_box .floor_classify navigator {
+  float: left;
+  width: 33.3%;
+}
+
+.floor_box .floor_classify navigator:nth-last-child(-n+4) {
+  height: 27.70215517vw;
+  padding-left: 10rpx;
+}
+
+.floor_box .floor_classify navigator:nth-child(2),
+.floor_box .floor_classify navigator:nth-child(3) {
+  padding-bottom: 10rpx;
+}
+
+.floor_box .floor_classify navigator image {
+  width: 100%;
+  height: 100%;
+}

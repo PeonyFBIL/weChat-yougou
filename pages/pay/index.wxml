@@ -1,0 +1,5 @@
+<!--pages/pay/pay.wxml-->
+<button
+  open-type="getUserInfo"
+  bindgetuserinfo="handleGetuserinfo"
+>授权</button>

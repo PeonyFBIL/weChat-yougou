@@ -1,0 +1,31 @@
+<view>
+	<SearchInput></SearchInput>
+	<view class="swiper_index">
+		<swiper indicator-dots autoplay>
+			<swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+				<navigator url="{{item.navigator_url}}" open_type="navigate">
+					<image mode="widthFix" src="{{item.image_src}}"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!--导航-->
+	<view class="index_nav">
+		<navigator wx:for="{{navList}}" wx:key="name">
+			<image mode="widthFix" src="{{item.image_src}}"></image>
+		</navigator>
+	</view>
+	<!--楼层-->
+	<view class="index_floor">
+		<view class="floor_box" wx:for="{{floorList}}" wx:key="floor_title.name">
+			<view class="floor_title">
+				<image mode="widthFix" src="{{item.floor_title.image_src}}"></image>
+			</view>
+			<view class="floor_classify">
+				<navigator wx:for="{{item.product_list}}" wx:key="name" wx:for-index="index">
+					<image  mode="{{index===0?'widthFix':'scaleToFill'}}" src="{{item.image_src}}"></image>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>
