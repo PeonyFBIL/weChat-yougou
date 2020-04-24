@@ -1,4 +1,7 @@
-<block wx:if="{cart.length!==0}}">
+<block wx:if="{{cart.length!==0?false:true}}" class="cart_img_cong">
+	<image mode="widthFix" src="https://hbimg.huabanimg.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658"></image>
+</block>
+<block wx:else>
 	<view class="cart">
 		<button bindtap="handleAddAddress" wx:if="{{userName===''?true:false}}">添加地址</button>
 		<view wx:else class="cart_info">
@@ -33,9 +36,7 @@
 	</view>
 </block>
 
-<view wx:else class="cart_img_cong">
-	<image mode="widthFix" src="https://hbimg.huabanimg.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658"></image>
-</view>
+
 <view class="footer_info">
 	<checkbox-group>
 		<checkbox checked="{{allCheck}}" bindtap="handleAllCheck">全选</checkbox>

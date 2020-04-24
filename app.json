@@ -16,10 +16,12 @@
     "components/SearchInput/SearchInput"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+
     "navigationBarBackgroundColor": "#eb4450",
     "navigationBarTitleText": "优购",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"dark"
   },
   "tabBar": {
     "list": [{
@@ -33,10 +35,6 @@
       {
         "pagePath": "pages/cart/index",
         "text": "购物车"
-      },
-      {
-        "pagePath": "pages/user/index",
-        "text": "我的"
       }
     ]
   },

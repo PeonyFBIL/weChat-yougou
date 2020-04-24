@@ -11,7 +11,7 @@
 	</view>
 	<!--导航-->
 	<view class="index_nav">
-		<navigator wx:for="{{navList}}" wx:key="name">
+		<navigator wx:for="{{navList}}" wx:key="name" open-type="switchTab" url="{{item.navigator_url?item.navigator_url:'/pages/category/index'}}">
 			<image mode="widthFix" src="{{item.image_src}}"></image>
 		</navigator>
 	</view>
@@ -22,7 +22,7 @@
 				<image mode="widthFix" src="{{item.floor_title.image_src}}"></image>
 			</view>
 			<view class="floor_classify">
-				<navigator wx:for="{{item.product_list}}" wx:key="name" wx:for-index="index">
+				<navigator wx:for="{{item.product_list}}" wx:key="name" wx:for-index="index"  url="{{item.navigator_url}}" >
 					<image  mode="{{index===0?'widthFix':'scaleToFill'}}" src="{{item.image_src}}"></image>
 				</navigator>
 			</view>

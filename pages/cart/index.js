@@ -206,6 +206,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+this.data.cart=wx.getStorageSync('cart')
+console.log("cart",this.data.cart.length);
 
   },
 

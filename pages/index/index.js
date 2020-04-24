@@ -16,15 +16,29 @@ Page({
     request({
       url: "https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata"
     }).then(res => {
-      this.setData({
-        swiperList: res.data.message
+
+      let swiperList = res.data.message
+      swiperList.forEach(v => {
+        v.navigator_url = v.navigator_url.replace(/\main/, "index")
+
       })
+      this.setData({
+        swiperList
+      })
+
+
     })
   },
   getNavList() {
     request({
       url: "https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"
     }).then(res => {
+      let navList = res.data.message
+      navList.forEach(v => {
+        if (v.navigator_url) {
+          v.navigator_url = v.navigator_url.replace(/\main/, "index")
+        }
+      })
       this.setData({
         navList: res.data.message
       })
@@ -34,9 +48,20 @@ Page({
     request({
       url: "https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"
     }).then(res => {
-      this.setData({
-        floorList: res.data.message
+
+      let floorList = res.data.message
+      floorList.forEach(v => {
+        v.product_list.forEach(v => {
+          v.navigator_url = `/pages/goods_list/index?cid=129}`
+        
+        })
       })
+      console.log("floorList1", floorList[0].product_list[0].navigator_url)
+
+      this.setData({
+        floorList
+      })
+      console.log("floorList", floorList)
     })
   },
   /**
